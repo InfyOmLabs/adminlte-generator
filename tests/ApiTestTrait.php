@@ -2,7 +2,7 @@
 
 trait ApiTestTrait
 {
-    public function assertApiResponse(Array $actualData)
+    public function assertApiResponse(array $actualData)
     {
         $this->assertApiSuccess();
 
@@ -19,7 +19,7 @@ trait ApiTestTrait
         $this->seeJson(['success' => true]);
     }
 
-    public function assertModelData(Array $actualData, Array $expectedData)
+    public function assertModelData(array $actualData, array $expectedData)
     {
         foreach ($actualData as $key => $value) {
             $this->assertEquals($actualData[$key], $expectedData[$key]);
