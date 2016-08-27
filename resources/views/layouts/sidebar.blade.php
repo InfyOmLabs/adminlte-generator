@@ -13,7 +13,7 @@
                 @if (Auth::guest())
                 <p>InfyOm</p>
                 @else
-                    <p> {{ ucwords(Auth::user()->name)}}</p>
+                    <p>{{ Auth::user()->name}}</p>
                 @endif
                 <!-- Status -->
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>

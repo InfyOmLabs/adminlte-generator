@@ -9,9 +9,9 @@
         "laravel/framework": "5.2.*",
         "yajra/laravel-datatables-oracle": "~6.0",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "infyomlabs/laravel-generator": "dev-master",
+        "infyomlabs/laravel-generator": "5.2.x-dev",
         "laravelcollective/html": "5.2.*",
-        "infyomlabs/adminlte-templates": "dev-master",
+        "infyomlabs/adminlte-templates": "5.2.x-dev",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
         "doctrine/dbal": "~2.3"
