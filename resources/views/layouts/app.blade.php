@@ -43,13 +43,7 @@
                                 <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
                                      class="user-image" alt="User Image"/>
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">
-                                      @if (Auth::guest())
-                                        InfyOm
-                                    @else
-                                    {!! Auth::user()->name !!}
-                                    @endif
-                                </span>
+                                <span class="hidden-xs">{!! Auth::user()->name !!}</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
@@ -57,11 +51,7 @@
                                     <img src="http://infyom.com/images/logo/blue_logo_150x150.jpg"
                                          class="img-circle" alt="User Image"/>
                                     <p>
-                                        @if (Auth::guest())
-                                            InfyOm
-                                        @else
-                                            {!! Auth::user()->name !!}
-                                        @endif
+                                        {!! Auth::user()->name !!}
                                         <small>Member since {!! Auth::user()->created_at->format('M. Y') !!}</small>
                                     </p>
                                 </li>
@@ -123,10 +113,8 @@
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{!! url('/login') !!}">Login</a></li>
-                        <li><a href="{!! url('/register') !!}">Register</a></li>
-                    @endif
+                    <li><a href="{!! url('/login') !!}">Login</a></li>
+                    <li><a href="{!! url('/register') !!}">Register</a></li>
                 </ul>
             </div>
         </div>

@@ -14,6 +14,9 @@ class Authenticate
      */
     protected $auth;
 
+    protected $loginPath = '/login';
+    protected $redirectTo = '/home';
+    protected $redirectAfterLogout = '/login';
 
     /**
      * Authenticate constructor.

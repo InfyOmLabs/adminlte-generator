@@ -14,12 +14,12 @@
         "laravel/framework": "5.1.*",
         "yajra/laravel-datatables-oracle": "~6.0",
         "barryvdh/laravel-ide-helper": "^2.1",
-        "infyomlabs/laravel-generator": "dev-master",
+        "infyomlabs/laravel-generator": "5.1.x-dev",
         "laravelcollective/html": "5.1.*",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
         "doctrine/dbal": "~2.3",
-        "infyomlabs/adminlte-templates": "dev-master"
+        "infyomlabs/adminlte-templates": "5.1.x-dev"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
