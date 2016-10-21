@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <button type="submit" class="btn btn-primary pull-right">
-                        <i class="fa fa-btn fa-refresh"></i>Reset Password
+                        <i class="fa fa-btn fa-refresh"></i> Reset Password
                     </button>
                 </div>
             </div>
