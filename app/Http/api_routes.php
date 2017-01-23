@@ -8,6 +8,3 @@
 | Here is where all API routes are defined.
 |
 */
-
-
-
