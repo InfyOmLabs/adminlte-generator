@@ -6,22 +6,20 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
-        "laravel/framework": "5.3.*",
-        "yajra/laravel-datatables-oracle": "~6.0",
-        "barryvdh/laravel-ide-helper": "^2.1",
-        "infyomlabs/laravel-generator": "5.3.x-dev",
-        "laravelcollective/html": "dev-master",
-        "infyomlabs/adminlte-templates": "5.3.x-dev",
+        "barryvdh/laravel-ide-helper": "^2.3",
+        "doctrine/dbal": "~2.3",
+        "infyomlabs/adminlte-templates": "5.4.x-dev",
+        "infyomlabs/laravel-generator": "5.4.x-dev",
         "infyomlabs/swagger-generator": "dev-master",
         "jlapp/swaggervel": "dev-master",
-        "doctrine/dbal": "~2.3"
+        "laravel/framework": "5.4.*",
+        "laravel/tinker": "~1.0",
+        "laravelcollective/html": "^5.4.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~5.0",
-        "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "phpunit/phpunit": "~5.7"
     },
     "autoload": {
         "classmap": [
@@ -32,9 +30,9 @@
         }
     },
     "autoload-dev": {
-        "classmap": [
-            "tests/TestCase.php"
-        ]
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
     },
     "scripts": {
         "post-root-package-install": [
@@ -53,6 +51,8 @@
         ]
     },
     "config": {
-        "preferred-install": "dist"
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true
     }
 }

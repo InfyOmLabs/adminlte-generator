@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return array(
 
@@ -13,6 +13,17 @@ return array(
 
     'filename'  => '_ide_helper',
     'format'    => 'php',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Fluent helpers
+    |--------------------------------------------------------------------------
+    |
+    | Set to true to generate commonly used Fluent methods
+    |
+    */
+
+    'include_fluent' => false,
 
     /*
     |--------------------------------------------------------------------------
@@ -71,7 +82,7 @@ return array(
             'emergency' => 'Monolog\Logger::addEmergency',
         )
     ),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Interface implementations
@@ -81,7 +92,7 @@ return array(
     | are detected by the helpers, others can be listed below.
     |
     */
-    
+
     'interfaces' => array(
 
     ),
@@ -142,4 +153,16 @@ return array(
      */
     'model_camel_case_properties' => false,
 
+    /*
+    |--------------------------------------------------------------------------
+    | Property Casts
+    |--------------------------------------------------------------------------
+    |
+    | Cast the given "real type" to the given "type".
+    |
+    */
+   'type_overrides' => array(
+        'integer' => 'int',
+        'boolean' => 'bool',
+   ),
 );
