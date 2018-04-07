@@ -1,3 +1,7 @@
+To run Scaffold:
+
+`php artisan infyom:scaffold sample --fieldsFile=app/Scaffold/sample.json`
+
 This is an InfyOmLabs / adminlte-generator fork with a few different purposes, see:
 
 For launching products we have several options maybe even more efficient than Laravel, depending on your need. However, scheduling on something that is already customary helps a lot to be agile and validate ideas.
