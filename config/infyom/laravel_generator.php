@@ -39,17 +39,17 @@ return [
 
         'views'             => resource_path('views/'),
 
-        'seeder'            => database_path('seeds/'),
-
-        'database_seeder'   => database_path('seeds/DatabaseSeeder.php'),
-
-        'factory'           => database_path('factories/'),
-
         'schema_files'      => resource_path('model_schemas/'),
 
         'templates_dir'     => resource_path('infyom/infyom-generator-templates/'),
 
+        'seeder'            => database_path('seeds/'),
+
+        'database_seeder'   => database_path('seeds/DatabaseSeeder.php'),
+
         'modelJs'           => resource_path('assets/js/models/'),
+
+        'factory'           => database_path('factories/'),
     ],
 
     /*
