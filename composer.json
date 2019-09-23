@@ -18,7 +18,9 @@
         "doctrine/dbal": "~2.3",
         "yajra/laravel-datatables-buttons":"^4.6",
         "yajra/laravel-datatables-html":"^4.4",
-        "yajra/laravel-datatables-oracle":"~9.0"
+        "yajra/laravel-datatables-oracle":"~9.0",
+        "appointer/swaggervel": "dev-master",
+        "infyomlabs/swagger-generator": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^2.6",
