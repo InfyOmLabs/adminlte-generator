@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8" style="margin-top: 2%">
+            <div class="col-md-7" style="margin-top: 2%">
                 <div class="box">
                     <h3 class="box-title" style="padding: 2%">Verify Your Email Address</h3>
 
@@ -13,16 +13,14 @@
                                 your email address
                             </div>
                         @endif
-                        <div>
-                            <p>Before proceeding, please check your email for a verification link.If you did not receive
-                                the email,</p>
-                            <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                                @csrf
-                                <button type="submit" class="btn btn-link">
-                                    click here to request another
-                                </button>
-                            </form>
-                        </div>
+                        <p>Before proceeding, please check your email for a verification link.If you did not receive
+                            the email,</p>
+                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
+                            @csrf
+                            <button type="submit" class="btn btn-link">
+                                click here to request another
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
