@@ -44,5 +44,5 @@
 
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! url('/dashboard') !!}" class="btn btn-default" style="margin-left: 5px">Cancel</a>
+    <a href="{!! url('/users') !!}" class="btn btn-default" style="margin-left: 5px">Cancel</a>
 </div>
