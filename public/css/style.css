@@ -1,0 +1,252 @@
+@import url(https://netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);
+
+.form-control {
+    border-radius: 5px !important;
+}
+
+.filter-control {
+    margin-top: -5px !important;
+    margin-bottom: 5px !important;
+}
+
+.rating {
+    border: none;
+    float: left;
+}
+
+.rating > input {
+    display: none;
+}
+
+.rating > label:before {
+    margin: 5px;
+    font-size: 1.25em;
+    font-family: FontAwesome;
+    display: inline-block;
+    content: "\f005";
+}
+
+.rating > .half:before {
+    content: "\f089";
+    position: absolute;
+}
+
+.rating > label {
+    color: #ddd;
+    float: right;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+    color: #FFD700;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+    color: #FFED85;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+#casts-table.table-bordered tbody td {
+    vertical-align: middle;
+}
+
+#movies_table.table-bordered tbody td {
+    vertical-align: middle;
+}
+
+.select2-search.select2-search--inline input {
+    border: none !important;
+}
+
+.lbl-block {
+    display: block;
+}
+
+.dataTables_filter input {
+    width:180px !important;
+}
+.column-right
+{
+    width:50px;
+}
+.column-right-2
+{
+    width:60px;
+}
+.column-right-3
+{
+    width:81px;
+}
+.no-sort {
+    background-image: none !important;
+}
+
+.icheckbox_line-green, .iradio_line-green {
+    padding: 21px 0 5px 28px !important;
+}
+
+.icheckbox_line-red, .iradio_line-red {
+    padding: 21px 0 5px 28px !important;
+}
+
+.icheckbox_line-green .icheck_line-icon, .iradio_line-green .icheck_line-icon {
+    left: 7px !important;
+
+}
+
+.icheckbox_line-green {
+    background: #59ce4b !important;
+}
+
+.icheckbox_line-red {
+    background: #f34242 !important;
+}
+
+.icheckbox_line-red .icheck_line-icon, .iradio_line-red .icheck_line-icon {
+    left: 7px !important;
+}
+
+.featured_btn {
+    width: 5px;
+    height: 5px;
+    margin-left: 18px
+}
+table.dataTable tbody td {
+    word-break: break-word;
+    vertical-align: top;
+}
+[class^='select2'] {
+    border-radius: 4px !important;
+}
+/**Loader CSS**/
+
+.ajax-loader {
+    background: none repeat scroll 0 0 black;
+    position: fixed;
+    opacity: 0.7;
+    z-index: 1000001;
+    display: none;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.spinner {
+    -webkit-animation: rotator 1.4s linear infinite;
+    animation: rotator 1.4s linear infinite;
+}
+
+@-webkit-keyframes rotator {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+@keyframes rotator {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+
+.path {
+    stroke-dasharray: 187;
+    stroke-dashoffset: 0;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+    animation: dash 1.4s ease-in-out infinite, colors 5.6s ease-in-out infinite;
+}
+
+@-webkit-keyframes colors {
+    0% {
+        stroke: #4285F4;
+    }
+    100% {
+        stroke: #4285F4;
+    }
+
+}
+
+@keyframes colors {
+    0% {
+        stroke: #4285F4;
+    }
+    100% {
+        stroke: #4285F4;
+    }
+}
+
+@-webkit-keyframes dash {
+    0% {
+        stroke-dashoffset: 187;
+    }
+    50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes dash {
+    0% {
+        stroke-dashoffset: 187;
+    }
+    50% {
+        stroke-dashoffset: 46.75;
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg);
+    }
+    100% {
+        stroke-dashoffset: 187;
+        -webkit-transform: rotate(450deg);
+        transform: rotate(450deg);
+    }
+}
+
+#page-overlay {
+    display: block;
+    height: 80px;
+    width: 80px;
+    position: fixed;
+    top: 30%;
+    left: 50%;
+}
+
+#loader-wrapper {
+
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: #2e2e2e;
+    z-index: 1000;
+    -moz-opacity: 0.6;
+    opacity: .6;
+    margin: auto;
+    filter: alpha(opacity=60);
+    background-image: none !important;
+}
