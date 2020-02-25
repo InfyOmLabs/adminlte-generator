@@ -166,6 +166,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <script src="{{asset('assets/jquery.dataTables.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
     <script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
 
