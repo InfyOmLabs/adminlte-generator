@@ -1,16 +1,16 @@
 @extends('layouts.app')
 @section('title')
-    Users
+    Roles
 @endsection
 
 @section('content')
     <section class="content-header">
-        <h1 class="pull-left">Users</h1>
+        <h1 class="pull-left">Roles</h1>
         <div class="pull-right" id="rightData" style="margin-bottom:5px;margin-top: -10px;">
             <form class="form-inline">
                 <div class="form-group" style="margin-top:30px">
                     <a class="btn btn-primary pull-right" style="margin-top: -20px;margin-bottom: 5px;"
-                       href="{!! route('users.create') !!}">Add New</a>
+                       href="{!! route('roles.create') !!}">Add New</a>
                 </div>
             </form>
         </div>
@@ -23,7 +23,7 @@
         <div class="clearfix"></div>
         <div class="box box-primary">
             <div class="box-body">
-                @include('users.table')
+                @include('roles.table')
             </div>
         </div>
         <div class="text-center">
@@ -35,18 +35,18 @@
 @section('scripts')
     <script>
       $(function () {
-        $('#users_table').DataTable({
+        $('#role_table').DataTable({
           bAutoWidth: false,
           processing: true,
           serverSide: true,
           stateSave: true,
           'order': [[0, 'desc']],
           ajax: {
-            url: '{!! url(route('users.index'))  !!}',
+            url: '{!! url(route('roles.index'))  !!}',
           },
           columnDefs: [
             {
-              'targets': [0, 4],
+              'targets': [2],
               'orderable': false,
               'className': 'text-center',
               'width': '5%',
@@ -54,33 +54,16 @@
           ],
           columns: [
             {
-              data: function (row) {
-                if (row) {
-                  return '<img class="assignee__avatar" style="width: 35px;" src="' +
-                    row.image_path +
-                    '" data-toggle="tooltip" title="' + row.name +
-                    '">'
-                } else {
-                  return ''
-                }
-              },
-              name: 'name',
-            },
-            {
               data: 'name',
               name: 'name',
             },
             {
-              data: 'email',
-              name: 'email',
-            },
-            {
-              data: 'phone',
-              name: 'phone',
+              data: 'description',
+              name: 'description',
             },
             {
               data: function (row) {
-                return '<a href="{{url('users')}}/' + row.id +
+                return '<a href="{{url('roles')}}/' + row.id +
                   '/edit" title="Edit" class="btn btn-default btn-xs" style="margin-right:5px;"><i class="glyphicon glyphicon-edit"   style="color:#3c8dbc;"></i>' +
                   '</a>' + '<a onclick="deleteData(' + row.id +
                   ')" title="Delete" class="btn btn-default btn-xs" ><i class="glyphicon glyphicon-trash"   style="color:red"></i></a>'
@@ -92,7 +75,7 @@
 
       // open delete confirmation model
       function deleteData(id) {
-        deleteItem('{{url('users')}}/' + id, '#users_table', 'User');
+        deleteItem('{{url('roles')}}/' + id, '#role_table', 'Role');
       }
 
       $(document).ready(function () {

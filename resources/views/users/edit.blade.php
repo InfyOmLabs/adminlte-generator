@@ -23,6 +23,10 @@
 @endsection
 @section('scripts')
     <script>
+      $('#editRoleId').select2({
+        width: '100%',
+        placeholder: "Select Role"
+      });
       $(function() {
         $(document).on('change', '#editUserImage', function () {
           let ext = $(this).val().split('.').pop().toLowerCase()

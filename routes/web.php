@@ -22,4 +22,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UserController');
     Route::get('profile', 'UserController@editProfile');
     Route::post('profile', 'UserController@updateProfile');
+    Route::resource('roles', 'RoleController');
 });

@@ -23,8 +23,11 @@
 @endsection
 @section('scripts')
     <script>
+      $('#roleId').select2({
+        width: '100%',
+        placeholder: "Select Role"
+      });
       $(function () {
-
         $(document).on('change', '#userImage', function () {
           let ext = $(this).val().split('.').pop().toLowerCase()
           if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {

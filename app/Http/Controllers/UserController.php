@@ -7,6 +7,7 @@ use App\Http\Requests\UpdateUserProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
 use App\Queries\UserDataTable;
+use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
 use Auth;
 use DataTables;
@@ -26,9 +27,13 @@ class UserController extends AppBaseController
     /** @var  UserRepository */
     private $userRepository;
 
-    public function __construct(UserRepository $userRepo)
+    /** @var RoleRepository $roleRepo */
+    private $roleRepo;
+
+    public function __construct(UserRepository $userRepo, RoleRepository $roleRepo)
     {
         $this->userRepository = $userRepo;
+        $this->roleRepo = $roleRepo;
     }
 
     /**
@@ -44,8 +49,9 @@ class UserController extends AppBaseController
         if ($request->ajax()) {
             return Datatables::of((new UserDataTable())->get())->make(true);
         }
+        $roles = $this->roleRepo->getRolesList();
 
-        return view('users.index');
+        return view('users.index', compact('roles'));
     }
 
     /**
@@ -55,7 +61,9 @@ class UserController extends AppBaseController
      */
     public function create()
     {
-        return view('users.create');
+        $roles = $this->roleRepo->getRolesList();
+
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -124,8 +132,10 @@ class UserController extends AppBaseController
 
             return redirect(route('users.index'));
         }
+        $roles = $this->roleRepo->getRolesList();
+        $selectedRoles = $user->roles()->pluck('role_id')->toArray();
 
-        return view('users.edit', compact('user'));
+        return view('users.edit', compact('user', 'roles', 'selectedRoles'));
     }
 
     /**
