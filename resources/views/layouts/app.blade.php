@@ -70,7 +70,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{!! url('update-profile') !!}"
+                                        <a href="{!! url('profile') !!}"
                                            class="btn btn-default btn-flat" style="border-radius: 5px !important;">Profile</a>
                                     </div>
                                     <div class="pull-right">

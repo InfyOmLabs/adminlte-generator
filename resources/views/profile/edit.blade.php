@@ -37,12 +37,11 @@
             $(this).val('')
             $('#editProfileValidationErrorsBox').
               html('The profile image must be a file of type: jpeg, jpg, png.').
-              show()
+              show();
           } else {
             displayPhoto(this, '#edit_preview_photos')
           }
         })
       })
-
     </script>
 @endsection
