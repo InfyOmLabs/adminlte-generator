@@ -217,6 +217,12 @@ abstract class BaseRepository
         return $record;
     }
 
+    /**
+     * @param  int  $id
+     * @param  array  $columns
+     *
+     * @return mixed
+     */
     public function findWithoutFail($id, $columns = ['*'])
     {
         try {

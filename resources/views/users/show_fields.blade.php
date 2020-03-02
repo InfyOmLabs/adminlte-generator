@@ -24,8 +24,9 @@
 
 <!-- Image Path Field -->
 <div class="form-group">
-    {!! Form::label('image_path', 'Image Path:') !!}
-    <p>{{ $user->image_path }}</p>
+    {!! Form::label('photo', 'Photo:') !!}
+    <p><img id='edit_preview_photos' class="img-thumbnail" width="100px;"
+            src="{{asset($user->image_path)}}"/></p>
 </div>
 
 <!-- Created At Field -->

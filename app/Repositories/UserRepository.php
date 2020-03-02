@@ -75,6 +75,7 @@ class UserRepository extends BaseRepository
      * @param  array  $input
      *
      * @throws Exception
+     *
      * @throws ApiOperationFailedException
      * @return User
      */
@@ -91,7 +92,6 @@ class UserRepository extends BaseRepository
             }
 
             $user->update($input);
-
 
             DB::commit();
 
@@ -119,19 +119,17 @@ class UserRepository extends BaseRepository
     }
 
     /**
-     * @param $input
+     * @param  array  $input
+     *
      * @return ApiOperationFailedException|User
      */
     public function updateProfile($input)
     {
         try {
+            $input = $this->validateInput($input);
             /** @var User $user */
             $user = User::find(Auth::id());
-            if (! empty($input['password'])) {
-                $input['password'] = bcrypt($input['password']);
-            } else {
-                $input['password'] = $user->password;
-            }
+
             if (isset($input['photo']) && ! empty($input['photo'])) {
                 $input['image_path'] = ImageTrait::makeImage(
                     $input['photo'], User::IMAGE_PATH, ['width' => 150, 'height' => 150]
@@ -144,10 +142,6 @@ class UserRepository extends BaseRepository
             }
 
             $user->update($input);
-            if (isset($post['password']) && ! empty($post['password'])) {
-                $user->password = \Hash::make($post['password']);
-                $user->save();
-            }
 
             return $user;
         } catch (Exception $e) {

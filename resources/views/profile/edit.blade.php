@@ -15,7 +15,7 @@
 
            <div class="box-body">
                <div class="row">
-                   {!! Form::model($user,['url' => 'profile', 'method' => 'post','files' => true]) !!}
+                   {!! Form::model($user,['url' => 'update-profile', 'method' => 'post','files' => true]) !!}
 
                     @include('profile.fields')
 
@@ -42,25 +42,6 @@
             displayPhoto(this, '#edit_preview_photos')
           }
         })
-
-        window.displayPhoto = function (input, selector) {
-          let displayPreview = true;
-          if (input.files && input.files[0]) {
-            let reader = new FileReader();
-            reader.onload = function (e) {
-              let image = new Image();
-              image.src = e.target.result;
-              image.onload = function () {
-                $(selector).attr('src', e.target.result);
-                displayPreview = true;
-              };
-            };
-            if (displayPreview) {
-              reader.readAsDataURL(input.files[0]);
-              $(selector).show();
-            }
-          }
-        };
       })
 
     </script>
