@@ -1,9 +1,10 @@
-<table class="table table-responsive-sm table-striped table-bordered" id="role_table">
-    <thead>
-        <th>Name</th>
-        <th>Detail</th>
-        <th>Action</th>
-    </thead>
-    <tbody>
-    </tbody>
-</table>
+@section('css')
+    @include('layouts.datatables_css')
+@endsection
+
+{!! $dataTable->table(['width' => '100%']) !!}
+
+@section('scripts')
+    @include('layouts.datatables_js')
+    {!! $dataTable->scripts() !!}
+@endsection

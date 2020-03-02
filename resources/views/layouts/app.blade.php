@@ -15,11 +15,8 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/AdminLTE.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/css/skins/_all-skins.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.2/css/select2.min.css">
-    <link rel="stylesheet" href="{{asset('css/AdminLTE.min.css')}}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/css/skins/_all-skins.min.css">
-    <link href="{{asset('assets/css/dataTables.bootstrap.css')}}" rel="stylesheet" type="text/css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.24/daterangepicker.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
     <!-- Ionicons -->
@@ -74,7 +71,7 @@
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="{!! url('profile') !!}"
+                                        <a href="{!! url('update-profile') !!}"
                                            class="btn btn-default btn-flat" style="border-radius: 5px !important;">Profile</a>
                                     </div>
                                     <div class="pull-right">
@@ -155,30 +152,28 @@
     @endif
 
     <!-- jQuery 3.1.1 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <!-- AdminLTE App -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/js/adminlte.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/js/adminlte.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-    <script src="{{asset('assets/jquery.dataTables.js')}}" type="text/javascript"></script>
-    <script src="{{asset('assets/dataTables.bootstrap.min.js')}}" type="text/javascript"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.3.3/js/app.min.js"></script>
-    <script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/iCheck/1.0.2/icheck.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 
 @yield('datatable_js')
 @yield('page_js')
 @yield('page_scripts')
 <script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
-@yield('page_js')
+<script src="{{ asset('assets/users/user.js') }}"></script>
+<script src="{{ asset('assets/roles/role.js') }}"></script>
 <script>
   let loggedInUserId = "{{ getLoggedInUserId() }}";
-  let usersUrl = "{{ url('users') }}/";
+  let userUrl = "{{ url('users') }}/";
+  let roleUrl = "{{ url('roles') }}/";
   let baseUrl = "{{url('/')}}/";
 </script>
 @yield('scripts')

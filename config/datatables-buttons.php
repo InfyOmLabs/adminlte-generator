@@ -19,7 +19,7 @@ return [
          * Base namespace/directory where your model's are located.
          * This is appended on default Laravel namespace.
          * Usage: php artisan datatables:make Post --model
-         * Output: App\DataTables\PostDataTable
+         * Output: App\DataTables\UserDataTable
          * With Model: App\Post
          * Export filename: posts_timestamp
          */

@@ -14,9 +14,9 @@ class CreateDefaultUsersSeeder extends Seeder
     public function run()
     {
         $input = [
-            'name'              => 'Mitul Golakiya',
-            'email'             => 'me@mitul.me',
-            'password'          => Hash::make('1nfy0m'),
+            'name'              => 'InfyOm Technologies',
+            'email'             => 'admin@gmail.com',
+            'password'          => Hash::make('Adm1n'),
             'email_verified_at' => Carbon::now(),
         ];
 

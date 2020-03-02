@@ -23,4 +23,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('profile', 'UserController@editProfile');
     Route::post('profile', 'UserController@updateProfile');
     Route::resource('roles', 'RoleController');
+    Route::get('update-profile', 'UserController@editProfile');
+    Route::post('update-profile', 'UserController@updateProfile');
 });

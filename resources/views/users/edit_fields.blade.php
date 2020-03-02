@@ -8,16 +8,6 @@
     {!! Form::label('email', 'Email:') !!}<span class="required">*</span>
     {!! Form::email('email', null, ['id'=>'email','class' => 'form-control','required']) !!}
 </div>
-<div class="form-group col-sm-3">
-    {!! Form::label('password', 'New Password:') !!}
-    <input class="form-control input-group__addon" id="pfNewPassword" type="password"
-           name="password">
-</div>
-<div class="form-group col-sm-3">
-    {!! Form::label('password_confirmation', 'Confirm Password:') !!}
-    <input class="form-control input-group__addon" id="pfNewConfirmPassword" type="password"
-           name="password_confirmation">
-</div>
 <!-- Phone Field -->
 <div class="form-group col-sm-3">
     {!! Form::label('phone', 'Phone:') !!}

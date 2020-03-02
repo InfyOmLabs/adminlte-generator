@@ -2,20 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\RoleDataTable;
 use App\Http\Requests\CreateRoleRequest;
 use App\Http\Requests\UpdateRoleRequest;
 use App\Models\Permission;
 use App\Models\Role;
-use App\Queries\RoleDataTable;
 use App\Repositories\PermissionRepository;
 use App\Repositories\RoleRepository;
-use DataTables;
 use Exception;
 use Flash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Http\Request;
 use Illuminate\Routing\Redirector;
+use Illuminate\View\View;
 use Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
@@ -43,21 +42,14 @@ class RoleController extends AppBaseController
     }
 
     /**
-     * Display a listing of the Roles.
+     * Display a listing of the Post.
      *
-     * @param Request $request
-     *
-     * @throws Exception
-     *
-     * @return Response
+     * @param  RoleDataTable  $roleDataTable
+     * @return JsonResponse|View
      */
-    public function index(Request $request)
+    public function index(RoleDataTable $roleDataTable)
     {
-        if ($request->ajax()) {
-            return Datatables::of((new RoleDataTable())->get())->make(true);
-        }
-
-        return view('roles.index');
+        return $roleDataTable->render('roles.index');
     }
 
     /**

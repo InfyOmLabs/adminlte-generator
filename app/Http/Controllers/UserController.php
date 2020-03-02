@@ -2,18 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\DataTables\UserDataTable;
 use App\Http\Requests\CreateUserRequest;
 use App\Http\Requests\UpdateUserProfileRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Models\User;
-use App\Queries\UserDataTable;
 use App\Repositories\RoleRepository;
 use App\Repositories\UserRepository;
 use Auth;
-use DataTables;
 use Exception;
 use Flash;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -37,21 +35,15 @@ class UserController extends AppBaseController
     }
 
     /**
-     * Display a listing of the User.
+     * Display a listing of the Post.
      *
-     * @param  Request  $request
-     * @throws Exception
-     *
-     * @return Factory|View
+     * @param  UserDataTable  $userDataTable
+     * @return JsonResponse|View
      */
-    public function index(Request $request)
+    public function index(UserDataTable $userDataTable)
     {
-        if ($request->ajax()) {
-            return Datatables::of((new UserDataTable())->get())->make(true);
-        }
         $roles = $this->roleRepo->getRolesList();
-
-        return view('users.index', compact('roles'));
+        return $userDataTable->render('users.index', compact('roles'));
     }
 
     /**
@@ -90,7 +82,6 @@ class UserController extends AppBaseController
         }
     }
 
-
     /**
      * Display the specified User.
      *
@@ -108,9 +99,8 @@ class UserController extends AppBaseController
             return redirect(route('users.index'));
         }
 
-        return view('users.show')->with('User', $user);
+        return view('users.show')->with('user', $user);
     }
-
 
     /**
      * Show the form for editing the specified Video.
@@ -190,6 +180,7 @@ class UserController extends AppBaseController
 
     /**
      * @param  UpdateUserProfileRequest  $request
+     *
      * @return RedirectResponse|Redirect
      */
     public function updateProfile(UpdateUserProfileRequest $request)
@@ -210,5 +201,4 @@ class UserController extends AppBaseController
             return Redirect::back()->withErrors([$e->getMessage()])->withInput($request->all());
         }
     }
-
 }

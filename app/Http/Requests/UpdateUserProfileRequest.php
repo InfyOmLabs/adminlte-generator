@@ -27,7 +27,7 @@ class UpdateUserProfileRequest extends FormRequest
     {
         $id = Auth::user()->id;
         $rules = User::$rules;
-        $rules['name'] =  'required|unique:users,name,'.$id;
+        $rules['name'] = 'required';
         $rules['email'] = 'required|email|unique:users,email,'.$id.'|regex:/^[\w\-\.\+]+\@[a-zA-Z0-9\.\-]+\.[a-zA-z0-9]{2,4}$/';
 
         return $rules;

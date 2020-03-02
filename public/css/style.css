@@ -9,56 +9,8 @@
     margin-bottom: 5px !important;
 }
 
-.rating {
-    border: none;
-    float: left;
-}
-
-.rating > input {
-    display: none;
-}
-
-.rating > label:before {
-    margin: 5px;
-    font-size: 1.25em;
-    font-family: FontAwesome;
-    display: inline-block;
-    content: "\f005";
-}
-
-.rating > .half:before {
-    content: "\f089";
-    position: absolute;
-}
-
-.rating > label {
-    color: #ddd;
-    float: right;
-}
-
-.rating > input:checked ~ label,
-.rating:not(:checked) > label:hover,
-.rating:not(:checked) > label:hover ~ label {
-    color: #FFD700;
-}
-
-.rating > input:checked + label:hover,
-.rating > input:checked ~ label:hover,
-.rating > label:hover ~ input:checked ~ label,
-.rating > input:checked ~ label:hover ~ label {
-    color: #FFED85;
-}
-
 .disabled {
     pointer-events: none;
-}
-
-#casts-table.table-bordered tbody td {
-    vertical-align: middle;
-}
-
-#movies_table.table-bordered tbody td {
-    vertical-align: middle;
 }
 
 .select2-search.select2-search--inline input {
@@ -88,36 +40,6 @@
     background-image: none !important;
 }
 
-.icheckbox_line-green, .iradio_line-green {
-    padding: 21px 0 5px 28px !important;
-}
-
-.icheckbox_line-red, .iradio_line-red {
-    padding: 21px 0 5px 28px !important;
-}
-
-.icheckbox_line-green .icheck_line-icon, .iradio_line-green .icheck_line-icon {
-    left: 7px !important;
-
-}
-
-.icheckbox_line-green {
-    background: #59ce4b !important;
-}
-
-.icheckbox_line-red {
-    background: #f34242 !important;
-}
-
-.icheckbox_line-red .icheck_line-icon, .iradio_line-red .icheck_line-icon {
-    left: 7px !important;
-}
-
-.featured_btn {
-    width: 5px;
-    height: 5px;
-    margin-left: 18px
-}
 table.dataTable tbody td {
     word-break: break-word;
     vertical-align: top;

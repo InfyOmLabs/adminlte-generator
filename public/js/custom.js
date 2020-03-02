@@ -1,4 +1,3 @@
-// require('@coreui/coreui');
 $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -10,38 +9,14 @@ $( document ).ajaxError(function(event, xhr, settings) {
   }
 });
 
-if ($.fn.dataTable !== undefined) {
-
-  $.extend($.fn.dataTable.defaults, {
-    "paging": true,
-    "info": true,
-    "ordering": true,
-    "autoWidth": false,
-    "pageLength": 10,
-    "language": {
-      "search": "",
-      "sSearch": "Search",
-      "sProcessing": "Processing"
-    },
-    "preDrawCallback": function () {
-      customSearch()
-    }
-  });
-}
-
-function customSearch() {
-  $('.dataTables_filter input').addClass("form-control");
-  $('.dataTables_filter input').attr("placeholder", "Search");
-}
-
-function deleteItemAjax(url, tableId, header, callFunction = null) {
+function deleteItemAjax (url, header) {
   $.ajax({
     url: url,
     type: 'DELETE',
     dataType: 'json',
     success: function (obj) {
       if (obj.success) {
-        $(tableId).DataTable().ajax.reload(null, false);
+        location.reload()
       }
       swal({
         title: 'Deleted!',
@@ -49,9 +24,6 @@ function deleteItemAjax(url, tableId, header, callFunction = null) {
         type: 'success',
         timer: 2000
       });
-      if (callFunction) {
-        eval(callFunction);
-      }
     },
     error: function (data) {
       swal({
@@ -64,7 +36,7 @@ function deleteItemAjax(url, tableId, header, callFunction = null) {
   });
 }
 
-window.deleteItem = function (url, tableId, header, callFunction = null) {
+window.deleteItem = function (url, header) {
   swal({
       title: "Delete !",
       text: 'Are you sure you want to delete this "' + header + '" ?',
@@ -78,11 +50,12 @@ window.deleteItem = function (url, tableId, header, callFunction = null) {
       confirmButtonText: 'Yes'
     },
     function () {
-      deleteItemAjax(url, tableId, header, callFunction = null);
+      deleteItemAjax(url, header)
     });
 };
 
-window.deleteItemInputConfirmation = function (url, tableId, header, alertMessage, callFunction = null) {
+window.deleteItemInputConfirmation = function (
+  url, header, alertMessage, callFunction = null) {
   swal({
       type: "input",
       inputPlaceholder: "Please type \"delete\" to delete this "+header+".",
@@ -108,7 +81,7 @@ window.deleteItemInputConfirmation = function (url, tableId, header, alertMessag
         return false;
       }
       if(inputVal.toLowerCase() === "delete"){
-        deleteItemAjax(url, tableId, header, callFunction = null);
+        deleteItemAjax(url, header, callFunction = null)
       }
     });
 };
@@ -116,22 +89,6 @@ window.deleteItemInputConfirmation = function (url, tableId, header, alertMessag
 window.printErrorMessage = function (selector, errorResult) {
   $(selector).show().html("");
   $(selector).text(errorResult.responseJSON.message);
-};
-
-window.manageCheckbox = function (input) {
-  if (input.id == "enabled") {
-    $(input).attr('name', 'no');
-    $(input).iCheck({
-      checkboxClass: 'icheckbox_line-white',
-      insert: '<div class="icheck_line-icon"></div>'
-    });
-  } else {
-    $(input).attr('name', 'yes');
-    $(input).iCheck({
-      checkboxClass: 'icheckbox_line-green',
-      insert: '<div class="icheck_line-icon"></div>'
-    });
-  }
 };
 
 window.manageAjaxErrors = function (data, errorDivId = 'editValidationErrorsBox') {
@@ -162,34 +119,10 @@ window.displaySuccessMessage = function (message) {
   });
 };
 
-$(function () {
-  $(".dataTables_length").css('padding-top', '6px');
-  $(".dataTables_info").css('padding-top', '24px');
-});
-
-if ($.fn.dataTable !== undefined) {
-  $.extend($.fn.dataTable.defaults, {
-    drawCallback: function (settings) {
-      let thisTableId = settings.sTableId;
-      if (settings.fnRecordsDisplay() > settings._iDisplayLength) {
-        $('#' + thisTableId + '_paginate').show();
-      } else {
-        $('#' + thisTableId + '_paginate').hide();
-      }
-    }
-  });
-}
-
 window.resetModalForm = function (formId, validationBox) {
   $(formId)[0].reset();
   $(validationBox).hide();
 };
-
-// open edit user profile model
-$(document).on('click', '.edit-profile', function (event) {
-  let userId = $(event.currentTarget).data('id');
-  renderProfileData(usersUrl + userId + '/edit');
-});
 
 $(document).on('change', '#pfImage', function () {
   let ext = $(this).val().split('.').pop().toLowerCase();
@@ -201,23 +134,6 @@ $(document).on('change', '#pfImage', function () {
   }
 });
 
-window.renderProfileData = function (usersUrl) {
-  $.ajax({
-    url: usersUrl,
-    type: 'GET',
-    success: function (result) {
-      if (result.success) {
-        let user = result.data;
-        $('#pfUserId').val(user.id);
-        $('#pfName').val(user.name);
-        $('#pfEmail').val(user.email);
-        $('#pfPhone').val(user.phone);
-        $('#edit_preview_photo').attr('src',user.image_avatar);
-        $('#EditProfileModal').modal('show');
-      }
-    }
-  });
-};
 window.displayPhoto = function (input, selector) {
   let displayPreview = true;
   if (input.files && input.files[0]) {

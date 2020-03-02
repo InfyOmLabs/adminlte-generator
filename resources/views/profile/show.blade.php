@@ -1,13 +1,4 @@
-@extends('admin.layouts.app')
-<style>
-    .dataTables_paginate {
-        float: right;
-    }
-
-    .dataTables_filter {
-        float: right;
-    }
-</style>
+@extends('layouts.app')
 @section('content')
 
     <section class="content-header">
