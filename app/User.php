@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
 use App\Traits\ImageTrait;
 use Barryvdh\LaravelIdeHelper\Eloquent;

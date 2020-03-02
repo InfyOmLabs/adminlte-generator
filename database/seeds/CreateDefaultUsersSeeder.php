@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\User;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 
