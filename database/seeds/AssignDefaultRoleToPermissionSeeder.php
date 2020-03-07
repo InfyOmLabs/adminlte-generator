@@ -2,7 +2,7 @@
 
 use App\Models\Permission;
 use App\Models\Role;
-use App\Models\User;
+use App\User;
 use Illuminate\Database\Seeder;
 
 class AssignDefaultRoleToPermissionSeeder extends Seeder

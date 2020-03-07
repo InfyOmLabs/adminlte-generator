@@ -3,8 +3,8 @@
 namespace App\Repositories;
 
 use App\Exceptions\ApiOperationFailedException;
-use App\Models\User;
 use App\Traits\ImageTrait;
+use App\User;
 use Auth;
 use DB;
 use Exception;

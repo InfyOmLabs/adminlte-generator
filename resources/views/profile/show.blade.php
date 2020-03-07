@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+    Edit Profile
+@endsection
 @section('content')
 
     <section class="content-header">

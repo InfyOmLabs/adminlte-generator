@@ -1,12 +1,12 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}<span class="required">*</span>
-    {!! Form::text('name', null, ['id'=>'name','class' => 'form-control','required']) !!}
+    {!! Form::text('name', null, ['id'=>'name', 'class' => 'form-control', 'required']) !!}
 </div>
 <!-- Email Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email', 'Email:') !!}<span class="required">*</span>
-    {!! Form::email('email', null, ['id'=>'email','class' => 'form-control','required']) !!}
+    {!! Form::email('email', null, ['id'=>'email', 'class' => 'form-control', 'required']) !!}
 </div>
 <!-- Password Field -->
 <div class="form-group col-sm-3">
@@ -23,7 +23,7 @@
 <!-- Phone Field -->
 <div class="form-group col-sm-3">
     {!! Form::label('phone', 'Phone:') !!}
-    {!! Form::number('phone', null, ['id'=>'phone','class' => 'form-control']) !!}
+    {!! Form::number('phone', null, ['id'=>'phone', 'class' => 'form-control']) !!}
 </div>
 <div class="form-group col-sm-3 ">
     {!! Form::label('photo', 'Photo') !!}
@@ -31,7 +31,7 @@
         <div class="col-sm-1" style="width: 11.333333%;">
             <span class="btn btn-primary btn-file" style="margin-right: 5px;margin-left: -17px;">
                 <div id="lb">Upload</div>
-                {!! Form::file('photo',['id'=>'userImage']) !!}
+                {!! Form::file('photo', ['id'=>'userImage']) !!}
             </span>
         </div>
     </div>

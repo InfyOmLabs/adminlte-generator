@@ -54,70 +54,16 @@ window.deleteItem = function (url, header) {
     });
 };
 
-window.deleteItemInputConfirmation = function (
-  url, header, alertMessage, callFunction = null) {
-  swal({
-      type: "input",
-      inputPlaceholder: "Please type \"delete\" to delete this "+header+".",
-      title: "Delete !",
-      text: alertMessage,
-      html: true,
-      showCancelButton: true,
-      closeOnConfirm: false,
-      showLoaderOnConfirm: true,
-      confirmButtonColor: '#5cb85c',
-      cancelButtonColor: '#d33',
-      cancelButtonText: 'No',
-      confirmButtonText: 'Yes',
-      imageUrl: baseUrl + "images/warning.png"
-    },
-    function (inputVal) {
-      if (inputVal===false) {
-        return false;
-      }
-      if (inputVal=='' || inputVal.toLowerCase() != "delete") {
-        swal.showInputError("Please type \"delete\" to delete this client.");
-        $(".sa-input-error").css('top','23px!important');
-        return false;
-      }
-      if(inputVal.toLowerCase() === "delete"){
-        deleteItemAjax(url, header, callFunction = null)
-      }
-    });
-};
-
 window.printErrorMessage = function (selector, errorResult) {
   $(selector).show().html("");
   $(selector).text(errorResult.responseJSON.message);
 };
 
-window.manageAjaxErrors = function (data, errorDivId = 'editValidationErrorsBox') {
-  if (data.status == 404) {
-    $.toast({
-      heading: 'Error',
-      text: data.responseJSON.message,
-      showHideTransition: 'fade',
-      icon: 'error',
-      position: 'top-right',
-    });
-  } else {
-    printErrorMessage("#" + errorDivId, data);
-  }
-};
 $(document).on('keydown', function (e) {
   if (e.keyCode === 27) {
     $('.modal').modal('hide');
   }
 });
-window.displaySuccessMessage = function (message) {
-  $.toast({
-    heading: 'Success',
-    text: message,
-    showHideTransition: 'slide',
-    icon: 'success',
-    position: 'top-right',
-  });
-};
 
 window.resetModalForm = function (formId, validationBox) {
   $(formId)[0].reset();
