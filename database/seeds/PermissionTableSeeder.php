@@ -15,7 +15,7 @@ class PermissionTableSeeder extends Seeder
         $input =
             [
                 'name'         => 'manage_users',
-                'display_name' => 'Manage Users',
+                'display_name' => 'Can Manage Users',
                 'description'  => 'User tab visible',
             ];
         /** @var Permission $permission */

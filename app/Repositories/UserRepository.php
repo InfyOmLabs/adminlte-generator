@@ -61,7 +61,7 @@ class UserRepository extends BaseRepository
                 $input['image_path'] = ImageTrait::makeImage($input['photo'], User::IMAGE_PATH);
             }
 
-            $user =User::create($input);
+            $user = User::create($input);
             /** @var User $user */
             $this->assignRoles($user, $input);
 
