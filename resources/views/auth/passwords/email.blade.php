@@ -49,7 +49,7 @@
         @endif
 
         <form method="post" action="{{ url('/password/email') }}">
-            {!! csrf_field() !!}
+            @csrf
 
             <div class="form-group has-feedback {{ $errors->has('email') ? ' has-error' : '' }}">
                 <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">

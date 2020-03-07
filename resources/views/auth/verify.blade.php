@@ -15,12 +15,7 @@
                         @endif
                         <p>Before proceeding, please check your email for a verification link.If you did not receive
                             the email,</p>
-                        <form class="d-inline" method="POST" action="{{ route('verification.resend') }}">
-                            @csrf
-                            <button type="submit" class="btn btn-link">
-                                click here to request another
-                            </button>
-                        </form>
+                        <a href="{{ route('verification.resend') }}">click here to request another'</a>.
                     </div>
                 </div>
             </div>

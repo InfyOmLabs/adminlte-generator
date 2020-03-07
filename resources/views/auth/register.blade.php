@@ -41,8 +41,7 @@
         <p class="login-box-msg">Register a new membership</p>
 
         <form method="post" action="{{ url('/register') }}">
-
-            {!! csrf_field() !!}
+            @csrf
 
             <div class="form-group has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
                 <input type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Full Name">
