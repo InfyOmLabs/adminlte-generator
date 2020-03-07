@@ -25,7 +25,6 @@
        </div>
    </div>
    <script>
-       $(".responsiveChosen").chosen({width: "100%"});
    </script>
 @endsection
 @section('scripts')
