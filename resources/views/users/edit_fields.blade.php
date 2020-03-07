@@ -1,12 +1,12 @@
 <!-- Name Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('name', 'Name:') !!}<span class="required">*</span>
-    {!! Form::text('name', null, ['id'=>'name','class' => 'form-control','required']) !!}
+    {!! Form::text('name', null, ['id'=>'name', 'class' => 'form-control', 'required']) !!}
 </div>
 <!-- Email Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('email', 'Email:') !!}<span class="required">*</span>
-    {!! Form::email('email', null, ['id'=>'email','class' => 'form-control','required']) !!}
+    {!! Form::email('email', null, ['id'=>'email', 'class' => 'form-control', 'required']) !!}
 </div>
 <!-- Phone Field -->
 <div class="form-group col-sm-3">

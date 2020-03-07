@@ -16,12 +16,6 @@
     <p>{{ $user->email_verified_at }}</p>
 </div>
 
-<!-- Password Field -->
-<div class="form-group">
-    {!! Form::label('password', 'Password:') !!}
-    <p>{{ $user->password }}</p>
-</div>
-
 <!-- Image Path Field -->
 <div class="form-group">
     {!! Form::label('photo', 'Photo:') !!}
