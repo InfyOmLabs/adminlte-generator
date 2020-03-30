@@ -156,6 +156,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
 <!-- AdminLTE App -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/admin-lte/2.4.3/js/adminlte.min.js"></script>
 
@@ -166,7 +167,6 @@
 @yield('datatable_js')
 @yield('page_js')
 @yield('page_scripts')
-<script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
 <script src="{{ asset('assets/users/user.js') }}"></script>
 <script src="{{ asset('assets/roles/role.js') }}"></script>
 <script>
@@ -176,7 +176,6 @@
   let baseUrl = "{{url('/')}}/";
 </script>
 @yield('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
-
+<script src="{{asset('js/custom.js')}}" type="text/javascript"></script>
 </body>
 </html>

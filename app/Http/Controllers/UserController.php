@@ -115,8 +115,9 @@ class UserController extends AppBaseController
         $user = User::find($id);
 
         if ($request->ajax()) {
-            return $this->sendResponse($user, '');
+            return $this->sendResponse($user, 'User retrieved successfully.');
         }
+        
         if (empty($user)) {
             Flash::error('User not found');
 
