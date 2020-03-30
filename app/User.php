@@ -41,7 +41,6 @@ use Illuminate\Support\Carbon;
  * @property string $image
  * @method static Builder|User whereImagePath($value)
  * @mixin Eloquent
- * @property-read mixed $img_avatar
  * @property string $image_path
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read int|null $notifications_count
