@@ -55,7 +55,6 @@ class User extends Authenticatable
 
     public $table = 'users';
     const IMAGE_PATH = 'users';
-    protected $appends = ['img_avatar'];
 
     /**
      * The attributes that are mass assignable.
@@ -116,19 +115,6 @@ class User extends Authenticatable
         'password'              => 'min:6|required_with:password_confirmation|same:password_confirmation',
         'password_confirmation' => 'min:6',
     ];
-
-    /**
-     * @return string
-     */
-    public function getImgAvatarAttribute()
-    {
-        $userAvtar = $this->getOriginal('image_path');
-        if (isset($userAvtar) && !empty($userAvtar)) {
-            return $this->imageUrl(self::IMAGE_PATH.DIRECTORY_SEPARATOR.$userAvtar);
-        }
-
-        return getUserImageInitial($this->id, $this->name);
-    }
 
     /**
      * @param $value
