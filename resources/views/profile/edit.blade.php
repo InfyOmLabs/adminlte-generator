@@ -24,13 +24,10 @@
            </div>
        </div>
    </div>
-   <script>
-       $(".responsiveChosen").chosen({width: "100%"});
-   </script>
 @endsection
 @section('scripts')
     <script>
-      $(function() {
+        $(function() {
         $(document).on('change', '#editUserImage', function () {
           let ext = $(this).val().split('.').pop().toLowerCase()
           if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
