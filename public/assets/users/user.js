@@ -39,13 +39,3 @@ $('#editRoleId').select2({
     width: '100%',
     placeholder: 'Select Role',
 });
-
-let ext = $(this).val().split('.').pop().toLowerCase();
-if ($.inArray(ext, ['gif', 'png', 'jpg', 'jpeg']) == -1) {
-    $(this).val('');
-    $('#editProfileValidationErrorsBox').
-        html('The profile image must be a file of type: jpeg, jpg, png.').
-        show();
-} else {
-    displayPhoto(this, '#edit_preview_photos');
-}
