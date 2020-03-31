@@ -10,12 +10,12 @@ use App\Models\Role;
 use App\Repositories\PermissionRepository;
 use App\Repositories\RoleRepository;
 use Exception;
-use Flash;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Response;
 use Illuminate\Routing\Redirector;
 use Illuminate\View\View;
-use Response;
+use Laracasts\Flash\Flash;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 
 /**
@@ -80,6 +80,31 @@ class RoleController extends AppBaseController
         Flash::success('Role saved successfully.');
 
         return redirect(route('roles.index'));
+    }
+
+    /**
+     * Display the specified Sop.
+     *
+     * @param  int  $id
+     *
+     * @return Response
+     */
+    public function show($id)
+    {
+        /** @var Role $role */
+        $roles = Role::whereId($id)->first();
+        $permissions = $this->permissionRepository->permissionList();
+        $data = array(
+            'roles'       => $roles,
+            'permissions' => $permissions,
+        );
+        if (empty($roles)) {
+            Flash::error('Role not found');
+
+            return redirect(route('roles.index'));
+        }
+
+        return view('roles.show')->with($data);
     }
 
     /**

@@ -12,13 +12,20 @@ class PermissionTableSeeder extends Seeder
      */
     public function run()
     {
-        $input =
+        $permissions = [
             [
                 'name'         => 'manage_users',
-                'display_name' => 'Can Manage Users',
+                'display_name' => 'Manage Users',
                 'description'  => 'User tab visible',
-            ];
-        /** @var Permission $permission */
-        Permission::create($input);
+            ],
+            [
+                'name'         => 'manage_roles',
+                'display_name' => 'Manage Roles',
+                'description'  => '',
+            ],
+        ];
+        foreach ($permissions as $permission) {
+            Permission::create($permission);
+        }
     }
 }

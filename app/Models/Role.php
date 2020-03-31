@@ -70,6 +70,7 @@ class Role extends Model implements RoleContract
      */
     public static $rules = [
         'name' => 'required|unique:roles,name',
+        'permissions' => 'required|array',
     ];
 
     public static function boot()

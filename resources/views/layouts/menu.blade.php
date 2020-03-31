@@ -1,5 +1,5 @@
 <li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{{ route('users.index') }}"><i class="fa fa-edit"></i><span>Users</span></a>
+    <a href="{{ route('users.index') }}"><i class="fa fa-users"></i><span>Users</span></a>
 </li>
 <li class="nav-item {{ Request::is('roles*') ? 'active' : '' }}">
     <a class="nav-link" href="{!! url('roles') !!}">
