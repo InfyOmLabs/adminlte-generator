@@ -1,6 +1,7 @@
 /node_modules
 /public/hot
 /public/storage
+/public/uploads
 /storage/*.key
 /vendor
 /.idea
@@ -17,3 +18,4 @@ yarn-error.log
 .env.backup
 .phpunit.result.cache
 fields_sample.json
+composer.lock
