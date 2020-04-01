@@ -18,7 +18,11 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
-        "laravelcollective/html": "^6.1"
+        "laravelcollective/html": "^6.1",
+        "yajra/laravel-datatables-buttons": "^4.6",
+        "yajra/laravel-datatables-html": "^4.4",
+        "yajra/laravel-datatables-oracle": "~9.0",
+        "intervention/image": "dev-master"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
@@ -41,6 +45,9 @@
         "psr-4": {
             "App\\": "app/"
         },
+        "files": [
+            "app/helpers.php"
+        ],
         "classmap": [
             "database/seeds",
             "database/factories"
