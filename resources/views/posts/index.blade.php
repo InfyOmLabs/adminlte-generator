@@ -14,12 +14,10 @@
                     </a>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
 
-    <div class="content">
-
-        <div class="clearfix"></div>
+    <div class="content px-3">
 
         @include('flash::message')
 
@@ -31,7 +29,6 @@
             </div>
             <!-- /.card-body -->
         </div>
-
     </div>
 @endsection
 
