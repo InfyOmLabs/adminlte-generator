@@ -47,7 +47,7 @@ You can support us by either sponsoring us or buying one of our paid products. O
 
 ### Buy our Paid Products
 
-[![InfyHMS](https://assets.infyom.com/open-source/infyhms-banner.png)](https://codecanyon.net/item/infyhms-smart-hospital-management-system/26344507)
+[![InfyHMS](https://assets.infyom.com/open-source/infyhms-banner.png)](https://bit.ly/3mtqXuk)
 
 You can also check out our other paid products on [CodeCanyon](https://codecanyon.net/user/infyomlabs/portfolio).
 
