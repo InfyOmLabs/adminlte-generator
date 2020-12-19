@@ -62,5 +62,11 @@
         "post-create-project-cmd": [
             "@php artisan key:generate --ansi"
         ]
-    }
+    },
+    "funding": [
+        {
+            "type": "opencollective",
+            "url": "https://opencollective.com/infyomlabs"
+        }
+    ]
 }
