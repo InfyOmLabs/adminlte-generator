@@ -14,10 +14,11 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-  	"infyomlabs/laravel-generator": "7.0.x-dev",
- 	 "infyomlabs/laravel-ui-stisla":"^2.0",
-  	"laravelcollective/html": "^6.2",
-  	"infyomlabs/stisla-templates": "^1.0"
+        "infyomlabs/laravel-generator": "7.0.x-dev",
+        "laravelcollective/html": "^6.1",
+        "infyomlabs/adminlte-templates": "^2.0",
+        "doctrine/dbal": "~2.3",
+        "laravel/ui":"^2.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
