@@ -11,7 +11,12 @@
         "php": "^7.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.0",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "infyomlabs/laravel-generator": "6.0.x-dev",
+        "laravelcollective/html": "^6.0",
+        "infyomlabs/adminlte-templates": "^2.0",
+        "doctrine/dbal": "~2.3",
+        "laravel/ui":"^1.0"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
