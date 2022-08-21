@@ -18,5 +18,8 @@
         "postcss": "^8.1.14",
         "sass": "^1.32.11",
         "sass-loader": "^11.0.1"
+    },
+    "dependencies": {
+        "notiflix": "^3.2.5"
     }
 }

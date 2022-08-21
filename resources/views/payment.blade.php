@@ -1,7 +1,18 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <title>Systeme Paiement Cash</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    {{-- <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> --}}
+    <!-- Custom Theme files -->
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <!-- //Custom Theme files -->
+    <!-- web font -->
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i" rel="stylesheet">
+    <!-- //web font -->
+    <link rel="stylesheet" href="{{ asset('css/notiflix-3.2.5.min.css') }}" />
     <script src="https://cdn.cinetpay.com/seamless/main.js"></script>
     <style>
         .sdk {
@@ -14,55 +25,45 @@
             transform: translate(-50%, -50%);
         }
     </style>
-    <script>
-        function checkout() {
-            CinetPay.setConfig({
-                apikey: '1046586239619f819726cc74.36136687',//   YOUR APIKEY
-                site_id: '723471',//YOUR_SITE_ID
-                notify_url: 'http://mondomaine.com/notify/',
-                mode: 'PRODUCTION'
-            });
-            CinetPay.getCheckout({
-                transaction_id: Math.floor(Math.random() * 100000000).toString(), // YOUR TRANSACTION ID
-                amount: 100,
-                currency: 'XOF',
-                channels: 'ALL',
-                description: 'Test de paiement',
-                 //Fournir ces variables pour le paiements par carte bancaire
-                customer_name:"Joe",//Le nom du client
-                customer_surname:"Down",//Le prenom du client
-                customer_email: "down@test.com",//l'email du client
-                customer_phone_number: "088767611",//l'email du client
-                customer_address : "BP 0024",//addresse du client
-                customer_city: "Antananarivo",// La ville du client
-                customer_country : "CM",// le code ISO du pays
-                customer_state : "CM",// le code ISO l'état
-                customer_zip_code : "06510", // code postal
-
-            });
-            CinetPay.waitResponse(function(data) {
-                if (data.status == "REFUSED") {
-                    if (alert("Votre paiement a échoué")) {
-                        window.location.reload();
-                    }
-                } else if (data.status == "ACCEPTED") {
-                    if (alert("Votre paiement a été effectué avec succès")) {
-                        window.location.reload();
-                    }
-                }
-            });
-            CinetPay.onError(function(data) {
-                console.log(data);
-            });
-        }
-    </script>
 </head>
+
 <body>
-    </head>
-    <body>
-        <div class="sdk">
-            <h1>SDK SEAMLESS</h1>
-            <button onclick="checkout()">Checkout</button>
+    <!-- main -->
+    <div class="main-w3layouts wrapper">
+        <h1>Inscription Systeme Paiement Cash</h1>
+        <div class="main-agileinfo">
+            <div class="agileits-top">
+                <form method="POST" action="{{ route('clients.store') }}" id="send-inscription">
+                    @csrf
+                    <input class="text" type="text" name="name" placeholder="Nom & Prénom" required="">
+                    <input class="text email" type="email" name="email" placeholder="Email" required="">
+                    <input class="text email" type="text" name="phone" placeholder="Téléphone" required="">
+                    <input type="submit" value="VALIDER & PAYER">
+                </form>
+            </div>
         </div>
-    </body>
+        <!-- copyright -->
+        <div class="colorlibcopy-agile">
+            <p>© 2022 Systeme Paiement Cash</p>
+        </div>
+        <!-- //copyright -->
+        <ul class="colorlib-bubbles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+    <!-- //main -->
+    <script src="{{ asset('js/notiflix-3.2.5.min.js') }}"></script>
+    <script src="{{ asset('https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js') }}"></script>
+    <script src="{{ asset('js/payment.js')}}"></script>
+</body>
+
 </html>
